@@ -1,0 +1,6 @@
+[keycloak]
+uri = "http://localhost:8999"
+master_realm = "master"
+username = "admin"
+password = "admin"
+basic_roles = [""]

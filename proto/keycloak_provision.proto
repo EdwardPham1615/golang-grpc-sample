@@ -1,0 +1,28 @@
+syntax = "proto3";
+package keycloak_provision;
+option go_package = "/proto";
+
+service KeycloakProvision {
+    rpc InitializeKeyCloak(InitializeKeycloakRealmRequest) returns (InitializeKeycloakRealmResponse) {}
+
+    rpc InitializeKeyCloakUser(InitializeKeycloakUserRequest) returns (InitializeKeycloakUserResponse) {}
+}
+
+
+message InitializeKeycloakRealmRequest {
+    string tenant_id = 1;
+}
+
+message InitializeKeycloakRealmResponse {
+    string message = 1;
+}
+
+message InitializeKeycloakUserRequest {
+    string tenant_id = 1;
+    string user_name = 2;
+    string pass_word = 3;
+}
+
+message InitializeKeycloakUserResponse {
+    string message = 1;
+}
